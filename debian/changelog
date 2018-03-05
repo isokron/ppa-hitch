@@ -1,0 +1,79 @@
+hitch (1.4.4-1) unstable; urgency=medium
+
+  * Imported upstream release 1.4.4
+  * Drop OpenSSL-1.1.0 patch included upstream
+
+ -- Stig Sandbeck Mathisen <ssm@debian.org>  Mon, 23 Jan 2017 11:36:33 +0100
+
+hitch (1.4.3-1) unstable; urgency=medium
+
+  * Imported upstream release 1.4.3
+  * Import patch from upstream for OpenSSL 1.1.0 compatibility
+  * debian/copyright: follow file renames
+  * Add dependency on lsb-base for init script
+  * Add autopkgtests
+
+ -- Stig Sandbeck Mathisen <ssm@debian.org>  Fri, 18 Nov 2016 21:37:26 +0100
+
+hitch (1.4.1-1) unstable; urgency=medium
+
+  * Imported upstream release 1.4.1
+  * Drop typo patch included upstream
+
+ -- Stig Sandbeck Mathisen <ssm@debian.org>  Tue, 27 Sep 2016 19:52:47 +0200
+
+hitch (1.4.0-2) unstable; urgency=medium
+
+  * Enable hardening options in the correct order
+  * Add typo patch
+
+ -- Stig Sandbeck Mathisen <ssm@debian.org>  Thu, 15 Sep 2016 16:47:54 +0200
+
+hitch (1.4.0-1) unstable; urgency=medium
+
+  * Imported upstream release 1.4.0
+  * Use dh compat level 10
+  * Enable hardening options
+
+ -- Stig Sandbeck Mathisen <ssm@debian.org>  Mon, 12 Sep 2016 22:29:09 +0200
+
+hitch (1.2.0-1) unstable; urgency=medium
+
+  * Imported upstream release 1.2.0
+  * Declare compliance with Debian Policy 3.9.8
+  * Build depend on pkgconf
+  * Disable tests, they require network access
+
+ -- Stig Sandbeck Mathisen <ssm@debian.org>  Wed, 04 May 2016 14:56:53 +0200
+
+hitch (1.1.1-1) unstable; urgency=medium
+
+  * Imported upstream release 1.1.1
+  * [6a3a361] Add build dependency for building documentation
+  * [c423dea] hitch.service: use --quiet by default
+  * [d654e21] Install documentation
+  * [751233a] Add a doc-base entry for hitch
+  * [77df716] update debian/copyright
+
+ -- Stig Sandbeck Mathisen <ssm@debian.org>  Mon, 01 Feb 2016 21:36:15 +0100
+
+hitch (1.1.0-1) unstable; urgency=medium
+
+  * Imported upstream release 1.1.0
+  * [e5faaf7] Add support for service reload
+
+ -- Stig Sandbeck Mathisen <ssm@debian.org>  Fri, 20 Nov 2015 16:19:14 +0100
+
+hitch (1.0.1-1) unstable; urgency=medium
+
+  * Imported upstream release 1.0.1
+  * [2fce525] Remove /nonexistent if created by hitch (Closes: #802533)
+  * [e03ca33] Adjust build system for tarball source
+
+ -- Stig Sandbeck Mathisen <ssm@debian.org>  Sun, 25 Oct 2015 11:58:43 +0100
+
+hitch (1.0.0~beta5-1) unstable; urgency=medium
+
+  * Initial release (Closes: #799222)
+
+ -- Stig Sandbeck Mathisen <ssm@debian.org>  Thu, 17 Sep 2015 14:09:53 +0200

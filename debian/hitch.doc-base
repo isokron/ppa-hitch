@@ -1,0 +1,9 @@
+Document: hitch
+Title: Debian hitch Manual
+Author: The hitch team
+Abstract: This is the manuals for Hitch, a libev-based high performance SSL/TLS
+ proxy by Varnish Software.
+Section: System/Security
+
+Format: Text
+Files: /usr/share/doc/hitch/*.md

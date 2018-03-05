@@ -1,0 +1,30 @@
+Source: hitch
+Maintainer: Stig Sandbeck Mathisen <ssm@debian.org>
+Section: web
+Priority: optional
+Build-Depends: debhelper (>= 10),
+               libev-dev,
+               libssl-dev,
+               automake,
+               dh-systemd,
+               pkgconf,
+               python3-docutils
+Standards-Version: 3.9.8
+Vcs-Browser: https://anonscm.debian.org/cgit/collab-maint/hitch.git/
+Vcs-Git: https://anonscm.debian.org/git/collab-maint/hitch.git
+Homepage: https://hitch-tls.org/
+
+Package: hitch
+Architecture: any
+Depends: ${shlibs:Depends},
+         ${misc:Depends},
+         adduser,
+         lsb-base (>= 3.0-6)
+Description: scalable TLS proxy
+ Hitch is a libev-based high performance SSL/TLS proxy, used for terminating
+ HTTPS traffic in front of origin servers.
+ .
+ It features:
+   * TLS 1.0, 1.1 and 1.2 support.
+   * SNI, with and without wildcard certificates
+   * Support for HAproxy's PROXY protocol

@@ -1,0 +1,3 @@
+Test-Command: cd debian/tests && rspec spec/hitch/*_spec.rb
+Depends: @,ruby-serverspec
+Restrictions: needs-root,isolation-container

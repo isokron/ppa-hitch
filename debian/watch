@@ -1,0 +1,3 @@
+version=3
+
+https://hitch-tls.org/source/ hitch-(\d+(?:\.\d+)*)\.tar\.gz

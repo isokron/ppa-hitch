@@ -1,0 +1,17 @@
+[Unit]
+Description=Hitch TLS unwrapping daemon
+After=network.target
+Documentation=https://github.com/varnish/hitch/tree/master/docs man:hitch(8)
+
+[Service]
+ExecStart=/usr/sbin/hitch --user _hitch --group _hitch --config /etc/hitch/hitch.conf --quiet
+ExecReload=/bin/kill -HUP $MAINPID
+Type=simple
+Restart=on-failure
+PrivateDevices=true
+PrivateTmp=true
+ProtectHome=true
+ProtectSystem=full
+
+[Install]
+WantedBy=multi-user.target

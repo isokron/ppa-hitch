@@ -1,0 +1,44 @@
+hitch for Debian
+----------------
+
+Hitch requires configuration before it can run.  Set listening port,
+backend port, and provide it with at least one key/certificate pair in
+a PEM file.
+
+
+Making a key
+------------
+
+For production, please consider getting a certificate from your
+favourite certificate authority, for instance https://letsencrypt.org/
+
+For testing, you can make your own key and certificate.
+
+# Make a TLS key and certificate (remember to fill in the web host
+# name when asked for Common Name)
+
+openssl req -newkey rsa:2048 -sha256 \
+  -keyout /etc/hitch/example.org.key \
+  -nodes -x509 -days 365 \
+  -out /etc/hitch/example.org.crt
+
+# Make a single file
+cat /etc/hitch/example.org.key /etc/hitch/example.org.crt \
+  > /etc/hitch/example.org.pem
+
+
+Configuring hitch
+-----------------
+
+# Edit /etc/hitch/hitch.conf
+frontend = "[*]:443"
+backend = "[127.0.0.1]:8080"
+pem-file = "/etc/hitch/example.org.pem"
+
+Make sure hitch is started with --config /etc/hitch/hitch.conf
+
+You can also set these with command line switches, and avoid using a
+configuration file.  See hitch(8)
+
+
+ -- Stig Sandbeck Mathisen <ssm@debian.org>, Thu, 17 Sep 2015 00:23:07 +0200
