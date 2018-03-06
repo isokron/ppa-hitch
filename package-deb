@@ -51,7 +51,7 @@ ln "../../$SOURCE" "../hitch_$V.$MINOR.orig.tar.gz"
 
 FULL_VERSION="$V.$MINOR-0${RELEASE}+daily+$(date +%Y%m%d.%H%M%S)"
 export DEBEMAIL="Lasse Karstensen <lasse.karstensen@gmail.com>"
-dch -D xenial -v "$V.$MINOR-0${RELEASE}+daily+$(date +%Y%m%d.%H%M%S)" "Automatic build from git"
+dch -D artful -v "$V.$MINOR-0${RELEASE}+daily+$(date +%Y%m%d.%H%M%S)" "Automatic build from git"
 #dch -D artful -v "$V.$MINOR-0" "Automatic build from git"
 #head debian/changelog
 
@@ -62,9 +62,7 @@ dpkg-buildpackage -S -j10 \
 # Work dir is build/
 cd ..
 
-
 echo "Upload command:    dput -c dputcf ppa:lasse-karstensen/hitch build/*changes"
-exit
 
 
 # By now we are done setting up and building the source package.
@@ -73,8 +71,5 @@ exit
 for dist in $BINDISTS; do
 	# Legacy packages embedded the release into the package version.
 	export DEBIAN_OVERRIDE_BINARY_VERSION="$FULL_VERSION~$dist"
-	sbuild -v -A -c "$dist-amd64$chroot_postfix" -d "$dist" varnish_*.dsc
+	sbuild -v -A -c "$dist-amd64$chroot_postfix" -d "$dist" hitch_*.dsc
 done
-
-
-
