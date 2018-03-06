@@ -51,17 +51,23 @@ ln "../../$SOURCE" "../hitch_$V.$MINOR.orig.tar.gz"
 
 FULL_VERSION="$V.$MINOR-0${RELEASE}+daily+$(date +%Y%m%d.%H%M%S)"
 export DEBEMAIL="Lasse Karstensen <lasse.karstensen@gmail.com>"
-dch -v "$V.$MINOR-0${RELEASE}+daily+$(date +%Y%m%d.%H%M%S)" "Automatic build from git"
-head debian/changelog
+dch -D xenial -v "$V.$MINOR-0${RELEASE}+daily+$(date +%Y%m%d.%H%M%S)" "Automatic build from git"
+#dch -D artful -v "$V.$MINOR-0" "Automatic build from git"
+#head debian/changelog
 
 # Generate the source package used by subsequent sbuilds
-dpkg-buildpackage -S -j10
+dpkg-buildpackage -S -j10 \
+       --sign-key=25C0AEC3D0D2AB90C20F1EB1E39FF2B43D24CCDD
 
 # Work dir is build/
 cd ..
 
-# By now we are done setting up and building the source package.
+
+echo "Upload command:    dput -c dputcf ppa:lasse-karstensen/hitch build/*changes"
 exit
+
+
+# By now we are done setting up and building the source package.
 
 # Build binary packages for the requested releases inside chroots.
 for dist in $BINDISTS; do
@@ -69,3 +75,6 @@ for dist in $BINDISTS; do
 	export DEBIAN_OVERRIDE_BINARY_VERSION="$FULL_VERSION~$dist"
 	sbuild -v -A -c "$dist-amd64$chroot_postfix" -d "$dist" varnish_*.dsc
 done
+
+
+
