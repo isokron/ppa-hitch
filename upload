@@ -1,0 +1,3 @@
+#!/bin/bash
+
+dput -c dputcf ppa:lasse-karstensen/hitch build/*changes
