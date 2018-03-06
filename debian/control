@@ -2,7 +2,7 @@ Source: hitch
 Maintainer: Stig Sandbeck Mathisen <ssm@debian.org>
 Section: web
 Priority: optional
-Build-Depends: debhelper (>= 10),
+Build-Depends: debhelper,
                libev-dev,
                libssl-dev,
                automake,
