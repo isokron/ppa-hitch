@@ -19,7 +19,11 @@ include /usr/share/dpkg/default.mk
 
 # main packaging script based on dh7 syntax
 %:
-	dh $@ --without autoreconf
+	dh $@
+
+# https://github.com/varnish/hitch/issues/252
+override_dh_autoreconf:
+	dh_autoreconf autoreconf -- -I . -i -f
 
 override_dh_auto_install:
 	dh_auto_install
