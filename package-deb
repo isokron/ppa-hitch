@@ -1,6 +1,6 @@
 #!/bin/bash
 set -o errexit
-BINDISTS=${BINDISTS:-artful}
+BINDISTS=${BINDISTS:-xenial}
 
 . common.sh
 
@@ -20,7 +20,7 @@ ln "../../$SOURCE" "../hitch_$V.$MINOR.orig.tar.gz"
 
 FULL_VERSION="$V.$MINOR-0${RELEASE}+daily+$(date +%Y%m%d.%H%M%S)"
 export DEBEMAIL="Lasse Karstensen <lasse.karstensen@gmail.com>"
-dch -D artful -v "$V.$MINOR-0${RELEASE}+daily+$(date +%Y%m%d.%H%M%S)" "Automatic build from git"
+dch -D xenial -v "$V.$MINOR-0${RELEASE}+daily+$(date +%Y%m%d.%H%M%S)" "Automatic build from git"
 head debian/changelog
 
 # Generate the source package used by subsequent sbuilds
