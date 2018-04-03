@@ -12,6 +12,8 @@ PrivateDevices=true
 PrivateTmp=true
 ProtectHome=true
 ProtectSystem=full
+# Allow more than 1024 open files/sockets at once.
+LimitNOFILE=131072
 
 [Install]
 WantedBy=multi-user.target
