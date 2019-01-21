@@ -1,17 +1,15 @@
 Source: hitch
-Maintainer: Stig Sandbeck Mathisen <ssm@debian.org>
+Maintainer: Lasse Karstensen <lasse.karstensen@gmail.com>
 Section: web
 Priority: optional
-Build-Depends: debhelper,
+Build-Depends: debhelper (>= 10),
                libev-dev,
                libssl-dev,
                automake,
-               dh-systemd,
                pkgconf,
+               dh-autoreconf,
                python3-docutils
 Standards-Version: 3.9.8
-Vcs-Browser: https://anonscm.debian.org/cgit/collab-maint/hitch.git/
-Vcs-Git: https://anonscm.debian.org/git/collab-maint/hitch.git
 Homepage: https://hitch-tls.org/
 
 Package: hitch
@@ -25,6 +23,6 @@ Description: scalable TLS proxy
  HTTPS traffic in front of origin servers.
  .
  It features:
-   * TLS 1.0, 1.1 and 1.2 support.
+   * TLS 1.0, 1.2 and 1.3 support.
    * SNI, with and without wildcard certificates
    * Support for HAproxy's PROXY protocol
