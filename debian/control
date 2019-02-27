@@ -18,6 +18,7 @@ Depends: ${shlibs:Depends},
          ${misc:Depends},
          adduser,
          lsb-base (>= 3.0-6)
+Recommends: certbot
 Description: scalable TLS proxy
  Hitch is a libev-based high performance SSL/TLS proxy, used for terminating
  HTTPS traffic in front of origin servers.
