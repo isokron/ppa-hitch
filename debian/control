@@ -1,5 +1,5 @@
 Source: hitch
-Maintainer: Lasse Karstensen <lasse.karstensen@gmail.com>
+Maintainer: Lasse Karstensen <lasse@varnish-cache.org>
 Section: web
 Priority: optional
 Build-Depends: debhelper (>= 10),
