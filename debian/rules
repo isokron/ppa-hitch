@@ -32,5 +32,6 @@ override_dh_auto_install:
 	rm -v debian/hitch/usr/share/doc/hitch/CHANGES.rst
 	rm -v debian/hitch/usr/share/doc/hitch/hitch.conf.example
 
+# Skip the tests at build. (for now)
 override_dh_auto_test:
 
