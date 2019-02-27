@@ -38,6 +38,11 @@ case "$1" in
                     _hitch > /dev/null
         fi
 
+        if ! test -f /etc/hitch/dhparams; then
+            openssl dhparam -out /etc/hitch/dhparams 2048
+            chown root:_hitch /etc/hitch/dhparams
+            chmod 0640 /etc/hitch/dhparams
+        fi
 
     ;;
 
