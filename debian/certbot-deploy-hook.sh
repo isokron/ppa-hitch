@@ -1,4 +1,9 @@
 #!/bin/bash
+#
+# Sample deploy hook reloading Hitch after a Certbot update.
+#
+# Symlink or copy this file into /etc/letsencrypt/renewal-hooks/deploy/ to enable.
+#
 # Full path to pre-generated Diffie Hellman Parameters file
 dhparams=/etc/hitch/dhparams
 
