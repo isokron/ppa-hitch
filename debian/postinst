@@ -44,8 +44,13 @@ case "$1" in
             chmod 0640 /etc/hitch/dhparams
         fi
 
-    ;;
+        if ! test -d /var/lib/hitch; then
+            mkdir -p /var/lib/hitch
+            chmod 0750 /var/lib/hitch
+            chown _hitch /var/lib/hitch
+        fi
 
+    ;;
     abort-upgrade|abort-remove|abort-deconfigure)
     ;;
 
