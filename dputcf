@@ -1,8 +1,6 @@
 [ppa:lasse-karstensen/hitch]
 fqdn = ppa.launchpad.net
 method = ftp
-#incoming = ~lasse-karstensen/+archive/ubuntu/hitch/
 incoming = ~lasse-karstensen/ubuntu/hitch/
-# ~<your_launchpad_id>/ubuntu/<ppa_name>/
 login = anonymous
 allow_unsigned_uploads = 0
