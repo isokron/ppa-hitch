@@ -8,6 +8,15 @@ debian/ build files are from Debian.
 
 You need a GPG key and a launchpad account to upload.
 
+License
+-------
+
+Packaging files are licensed under GPLv3.
+
+See the LICENSE file for details.
+
+For upstream Hitch TLS licensing, see https://hitch-tls.org/ .
+
 Some notes
 ----------
 
