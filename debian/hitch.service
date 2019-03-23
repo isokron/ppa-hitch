@@ -5,7 +5,7 @@ Documentation=https://github.com/varnish/hitch/tree/master/docs man:hitch(8)
 ConditionFileNotEmpty=/etc/hitch/hitch.conf
 
 [Service]
-ExecStart=/usr/sbin/hitch --user _hitch --group _hitch --config /etc/hitch/hitch.conf --syslog
+ExecStart=/usr/sbin/hitch --user _hitch --group _hitch --config /etc/hitch/hitch.conf
 ExecReload=/bin/kill -HUP $MAINPID
 Type=simple
 Restart=on-failure
