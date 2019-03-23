@@ -19,7 +19,10 @@ rm -f debian/.*.sw?    # Delete any vim temporary files.
 ln "../../$SOURCE" "../hitch_$V.$MINOR.orig.tar.gz"
 
 FULL_VERSION="$V.$MINOR-0${RELEASE}+daily+$(date +%Y%m%d.%H%M%S)"
-export DEBEMAIL="Lasse Karstensen <lasse.karstensen@gmail.com>"
+
+# Consider setting DEBEMAIL to get prettier changelog entries.
+# (and to find the right signing key below)
+
 dch -D bionic -v "$V.$MINOR-0${RELEASE}+daily+$(date +%Y%m%d.%H%M%S)" "Automatic build from git"
 head debian/changelog
 
